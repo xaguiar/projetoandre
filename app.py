@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import render_template
 
 def create_app():
     app = Flask(__name__)
@@ -6,10 +7,10 @@ def create_app():
 
 app = create_app()
 
-@app.route('/teste')
+@app.route('/')
 def index():
     return 'TCHAKITCHACKI'
 
-@app.route('/teste/1')
-def index1():
-    return 'bilsonaro'
+@app.route('/about')
+def about():
+    return render_template('about.html')
